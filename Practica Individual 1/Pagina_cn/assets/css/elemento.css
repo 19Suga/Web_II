@@ -1,0 +1,115 @@
+.elemento {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #EF0081;
+    padding: 2rem 0;
+}
+
+.elemento__titulo {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgb(49, 49, 49);
+}
+
+.elemento__figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.elemento__figura--imagen {
+    width: 50vw;
+    max-width: 600px;
+    margin-bottom: 1rem;
+}
+
+.elemento__figura--texto {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.elemento__boton {
+    color: #e21919;
+    text-align: center;
+}
+
+.producto {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #25C872;
+}
+
+.producto__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.producto__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card__titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.card__precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:dodgerblue;
+}
+
+.card__desc {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.card__boton {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color:darkcyan;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.card__boton:hover {
+    background-color: #000;
+}

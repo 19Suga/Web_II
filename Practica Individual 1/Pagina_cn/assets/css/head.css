@@ -1,0 +1,28 @@
+.head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgb(8, 21, 22);
+    border-bottom: 1px solid #0b0606;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.head__logo {
+    height: 75px;
+    margin-bottom: 1rem;
+}
+
+.head__nav {
+    text-align: center;
+}
+
+.head__link {
+    font-family: sans-serif;
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem;
+    font-weight: 400;
+    color: white;
+}
