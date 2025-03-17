@@ -28,6 +28,10 @@ import deleteIcon from "./componentes/deleteIcon.js";
         task.appendChild(contTask);
         list.appendChild(task);
         console.log(contTask.innerHTML);
+        contTask.appendChild(deleteIcon()); // **Aquí agregamos el ícono de eliminar**
+
+    task.appendChild(contTask);
+    list.appendChild(task);x
     };
     
     btn.addEventListener('click', createTask);
