@@ -1,51 +1,162 @@
+/* Estilos generales */
+body {
+    background-color: #0F1624; /* Fondo oscuro por defecto */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
 
-        body {
-            background-color: #0F1624;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #0D131F;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-            padding: 50px;
-        }
-        .info {
-            max-width: 50%;
-        }
-        .highlight {
-            color: #00D4FF;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #00D4FF;
-            color: #0F1624;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .image img {
-            max-width: 500px;
-            border: 5px solid #00D4FF;
-            border-radius: 10px;
-        }
+/* Modo claro */
+.light-mode {
+    background-color: #ffffff;
+    color: #0F1624;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0D131F;
+    transition: background 0.3s;
+}
+
+/* Cambios en modo claro */
+.light-mode header {
+    background-color: #f0f0f0;
+}
+
+/* Links del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Links en modo claro */
+.light-mode nav ul li a {
+    color: #0F1624;
+}
+
+/* Estilos de la sección principal */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 50px;
+}
+
+/* Texto destacado */
+.highlight {
+    color: #00D4FF;
+}
+
+/* Botón de llamada a la acción */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00D4FF;
+    color: #0F1624;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Imagen con borde */
+.image img {
+    max-width: 500px;
+    border: 5px solid #00D4FF;
+    border-radius: 10px;
+}
+
+/* Botón de cambio de tema */
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+}
+
+/* Botón en modo claro */
+.light-mode #darkModeToggle {
+    color: black;
+}
+/* Estilos del formulario de contacto */
+.contact-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #0D131F;
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+/* Estilos en modo claro */
+.light-mode .contact-form {
+    background-color: #f0f0f0;
+}
+
+.contact-form h2 {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #00D4FF;
+    background-color: #0F1624;
+    color: white;
+    transition: background 0.3s;
+}
+
+/* Campos en modo claro */
+.light-mode .contact-form input,
+.light-mode .contact-form textarea {
+    background-color: white;
+    color: black;
+    border: 1px solid #0F1624;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background-color: #00D4FF;
+    color: #0F1624;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #008cba;
+}
+
+/* Mensaje de confirmación */
+#formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}

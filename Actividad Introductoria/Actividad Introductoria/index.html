@@ -12,26 +12,46 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quien-soy">Instagram</a></li>
-                <li><a href="#portafolio">Facebook</a></li>
-                <li><a href="#contacto">X</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                <li><a href="https://x.com/" target="_blank">X</a></li>
             </ul>
         </nav>
+        <button id="darkModeToggle">☀️</button> <!-- Botón para cambiar de tema -->
     </header>
+
     <section class="hero">
         <div class="info">
             <h1><span class="highlight">Russel</span> Luna Navarro</h1>
-            <p>Soy estudiante de la carrera de Ingeniería en Sistemas Informáticos, actualmente me encuentro en 3er semestre de la carrera.
-                Tengo 19 años, en cuanto al deporte me gustas los deportes de contacto.Ipsum sint et placeat aliquam, porro, repudiandae reiciendis sapiente id dolore iste voluptatibus minus.
-                Molestiae quis officiis numquam perferendis nihil minus reprehenderit nisi unde omnis quo sint doloremque similique laudantium sit, qui ipsum blanditiis distinctio pariatur? Cumque, dolor dignissimos? Minima quos earum iste tempora.
-                Soluta aliquid nihil ipsum dolores, tempore ad quo, rerum fugiat maxime nesciunt nisi, et exercitationem repellat odio dolorum libero eligendi debitis hic. Ad commodi architecto aspernatur porro illum? Eius, laudantium.
-                Blanditiis ipsum maiores quae dolores. Eum dolores autem ipsam vero corrupti suscipit voluptate voluptates inventore voluptatibus ipsum quos assumenda beatae earum sunt cumque architecto minima, magnam obcaecati? Ab, tempora cupiditate!
+            <p>Soy estudiante de la carrera de Ingeniería en Sistemas Informáticos, actualmente me encuentro en 3er semestre de la carrera.Tengo 19 años, en cuanto al deporte me gustan los deportes de contacto.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi veritatis laborum, at commodi dignissimos nobis tenetur, autem sit nisi asperiores rerum ducimus dicta facere beatae in placeat iusto facilis. Et.
+            Quis aut eos quae perspiciatis minima recusandae, deleniti eligendi. Tenetur necessitatibus temporibus sed, non eaque perspiciatis possimus voluptatem? Nulla quam aliquam corporis fugiat minima maxime perspiciatis vitae quibusdam est nostrum.
             </p>
             <a href="#" class="btn">Hola hola</a>
+    
+            <!-- Formulario colocado justo debajo del párrafo -->
+            <form id="contactForm" class="contact-form">
+                <h2>Contacto</h2>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+    
+                <label for="email">Correo:</label>
+                <input type="email" id="email" required>
+    
+                <label for="message">Mensaje:</label>
+                <textarea id="message" rows="3" required></textarea>
+    
+                <button type="submit">Enviar</button>
+                <p id="formMessage"></p>
+            </form>
         </div>
+    
         <div class="image">
             <img src="foto/foto1.jpg" alt="Foto de John Carter">
         </div>
     </section>
+    
+
+    <script src="script.js"></script>
 </body>
 </html>
