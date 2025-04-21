@@ -30,7 +30,6 @@
         return fila; 
 };x
 
-
 const table = document.querySelector("[data-table]");
 */
 
@@ -50,8 +49,6 @@ const table = document.querySelector("[data-table]");
     });
     return promesa;
 }*/
-
-
 
 /*
 lista_clientes()
@@ -96,11 +93,8 @@ const actualizarCliente=(nombre,email,id)=>{ // ojoooo solo actualizo nombre y e
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({nombre,email})
-
         }).then(respuesta=>console.log(respuesta)).catch((err)=>console.log(err));
 };
-
-
 
 export const clientService={
     listaclientes,
