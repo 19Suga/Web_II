@@ -30,6 +30,7 @@
         return fila; 
 };x
 
+
 const table = document.querySelector("[data-table]");
 */
 
@@ -50,6 +51,8 @@ const table = document.querySelector("[data-table]");
     return promesa;
 }*/
 
+
+
 /*
 lista_clientes()
     .then((data)=>{
@@ -63,6 +66,7 @@ lista_clientes()
 */
 
 //---------optimizado---------
+/*
 const listaclientes=()=> fetch("http://localhost:3000/perfil").then((respuesta)=>respuesta.json());
 const crearCliente=(nombre,email)=>{
     return fetch ("http://localhost:3000/perfil",{
@@ -93,8 +97,11 @@ const actualizarCliente=(nombre,email,id)=>{ // ojoooo solo actualizo nombre y e
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({nombre,email})
+
         }).then(respuesta=>console.log(respuesta)).catch((err)=>console.log(err));
 };
+
+
 
 export const clientService={
     listaclientes,
@@ -103,3 +110,124 @@ export const clientService={
     clientes,
     actualizarCliente
 };
+*/
+
+
+const API_BASE_URL = 'http://localhost:8080/api1/aula.php';
+
+const listaclientes = () => {
+    return fetch(API_BASE_URL)
+        .then(response => {
+            if (!response.ok) throw new Error('Error al obtener clientes');
+            return response.json();
+        });
+};
+
+const crearCliente = (nombre, email) => {
+    return fetch(API_BASE_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nombre,
+            email,
+            id: uuid.v4()
+        })
+    }).then(response => {
+        if (!response.ok) throw new Error('Error al crear cliente');
+        return response.json();
+    });
+};
+
+const eliminarCliente = (id) => {
+    return fetch(`${API_BASE_URL}?id=${id}`, {
+        method: 'DELETE'
+    }).then(response => {
+        if (!response.ok) throw new Error('Error al eliminar cliente');
+        return response.json();
+    });
+};
+
+const clientes = (id) => {
+    return fetch(`${API_BASE_URL}?id=${id}`)
+        .then(response => {
+            if (!response.ok) throw new Error('Error al obtener cliente');
+            return response.json();
+        });
+};
+
+const actualizarCliente = (nombre, email, id) => {
+    return fetch(API_BASE_URL, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nombre, email, id })
+    }).then(response => {
+        if (!response.ok) throw new Error('Error al actualizar cliente');
+        return response.json();
+    });
+};
+
+export const clientService = {
+    listaclientes,
+    crearCliente,
+    eliminarCliente,
+    clientes,
+    actualizarCliente
+};
+
+/*
+const API_BASE_URL='http://localhost/api1/conexion.php';
+const listaclientes=()=>{
+    return fetch(API_BASE_URL)
+    .then(response=>{
+        if(!response.ok)throw new Error('error clientes');
+        return response.json();
+    })
+}
+const crearCliente=(nombre,email)=>{
+    return fetch(API_BASE_URL,{
+        method:'POST',
+        header:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+            nombre,email,id:uuid.v4()
+        })
+    }).then(response=>{
+        if(!response.ok)throw new Error('error crear clientes');
+        return response.json();
+    })
+}
+const eliminarCliente=(id)=>{
+    
+    return fetch(`${API_BASE_URL}?id=${id}`,{
+        method:"DELETE"
+    });
+
+}
+const clientes=(id)=>{
+    return fetch(`${API_BASE_URL}?id=${id}`).then((respuesta)=>respuesta.json())}
+
+const actualizarCliente=(nombre,email,id)=>{ // ojoooo solo actualizo nombre y email NO ID
+        return fetch(API_BASE_URL,
+            {
+                method:"PUT",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({nombre,email,id})
+    
+            }).then(respuesta=>console.log(respuesta)).catch((err)=>console.log(err));
+    };
+
+export const clientService = {
+    listaclientes,
+    crearCliente,
+    eliminarCliente,
+    clientes,
+    actualizarCliente
+};
+*/
