@@ -113,7 +113,7 @@ export const clientService={
 */
 
 
-const API_BASE_URL = 'http://localhost:8080/api1/aula.php';
+/*const API_BASE_URL = 'http://localhost:8080/api1/aula.php';
 
 const listaclientes = () => {
     return fetch(API_BASE_URL)
@@ -231,70 +231,3 @@ export const clientService = {
     actualizarCliente
 };
 */
-const SUPABASE_URL=``;
-const SUPABASE_KEY=``;
-const TABLE=`clientes`;
-const API_URL=`${SUPABASE_URL}/rest/v1/${TABLE}`;// me indica a que tabla conectarme 
-const HEADERS={
-    `apikey`:SUPABASE_KEY,
-    `Authorization`:`Bearer ${SUPABASE_KEY}`,
-    `Content-Type`:`application/json`
-};
-const listaclientes()=>{
-    return fetch(`${API_URL}?select=* , {headers:HEADERS}`)
-    .then(res=>{
-        if(!res.ok)throw new Error(`error en listar clinetes`);
-        return res.json();
-    });
-};
-const crearCliente =(nombre,email,id)=>{
-    const cliente={
-        nombre,
-        email,
-        id:uuid.v4()
-    };
-    return fetch(API_URL,{
-        method:`POST`,
-        headers:HEADERS,
-        body:JSON.stringify(clientes)
-    })
-    .then(async (res)=>{
-        if(!res.ok){
-            const text=await res.text();//responde al error en texto
-            throw new Error(text || `error al insertar cliente`);
-        }
-        const text= await res.text();
-        return text ? JSON.parse(text) :cliente; //si todo bien 
-    }).catch((error)=>{
-        console.error("error al crear cliente",error);
-        throw error;
-    });
-};
-const eliminarCliente = (id)=>{//calor de entrada da referencia a elemento eliminar 
-    return fetch (`${API_URL}?id=esq.${id}`,{
-        method:`DELETE`,
-        headers:HEADERS
-    });
-};
-const clientes=(id)=>{
-    return fetch(`${API_URL}?id=eq.${id}`,
-        {headers:HEADERS}
-    )
-}
-const actualizarCliente=(nombre,email,id)=>{
-    return fetch(`${API_URL}?id=eq.${id}`,{
-        method:`PATCH`,
-        headers:{
-            ...HEADERS,
-            `Prefer`:`return=representation`
-        },
-        body: JSON.stringify({nombre,email})
-    })
-};
-export const clientService = {
-    listaclientes,
-    crearCliente,
-    eliminarCliente,
-    clientes,
-    actualizarCliente
-};
