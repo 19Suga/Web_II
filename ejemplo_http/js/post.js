@@ -1,23 +1,23 @@
+//creamos una variable que contenga un archivo para enviar a la base de datos
 const postData =()=>{
-    const newPost={
-        titulo:"Nuevo Post",
-        descripcion:"nueva descripcion",
+    const newPost = {
+        titulo: "Nuevo Post",
+        descripcion: "nueva descripcion",
         fecha: new Date().toISOString()
     };
-
-    fetch(API_URL,{
-        method:"POST",
-        headers:{
-            "Content-Type": "application/json",
+    fetch(API_URL, {
+        method: "POST",
+        headers : {
+            "Content-Type":"application/json",
             "Accept": "application/json"
         },
-        body:JSON.stringify(newPost)
+        body: JSON.stringify(newPost)
     })
-    .then(Response=>{
-        if(!Response.ok){
-            throw new Error ('Error en la respuesta estado: ${response.status}')
+    .then(response=>{
+        if(!response.ok){
+            throw new console.error(`ERROR EN LA RESPUESTA estado: ${response.status}`);
         }
-        return Response.json();
-    }).then(data=>showResult(data))
-    .catch(error=>showResult(error.message,true));
-}
+        return response.json
+    }).then(data => showResult(data))
+    .catch(error => showResult(error.message,true));
+};

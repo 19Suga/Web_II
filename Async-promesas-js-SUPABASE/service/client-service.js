@@ -245,57 +245,57 @@ const HEADERS = {
 };
 
 const listaclientes = () => {
-  return fetch(`${API_URL}?select=*`, { headers: HEADERS })
+return fetch(`${API_URL}?select=*`, { headers: HEADERS })
     .then(res => {
-      if (!res.ok) throw new Error('Error al obtener clientes');
-      return res.json();
+    if (!res.ok) throw new Error('Error al obtener clientes');
+    return res.json();
     });
 };
 
 const crearCliente = (nombre, email) => {
-  const cliente = {
+const cliente = {
     nombre,
     email,
     id: uuid.v4()
-  };
-  return fetch(API_URL, {
+};
+return fetch(API_URL, {
     method: 'POST',
     headers: HEADERS,
     body: JSON.stringify(cliente)
-  })
+})
     .then(async res => {
-      if (!res.ok) {
+    if (!res.ok) {
         const text = await res.text();
         throw new Error(text || 'Error al insertar cliente');
-      }
-      const text = await res.text();
-      return text ? JSON.parse(text) : cliente;
+    }
+    const text = await res.text();
+    return text ? JSON.parse(text) : cliente;
     })
     .catch(error => {
-      console.error("Error al crear cliente", error);
-      throw error;
+    console.error("Error al crear cliente", error);
+    throw error;
     });
 };
 
 const eliminarCliente = (id) => {
-  return fetch(`${API_URL}?id=eq.${id}`, {
+return fetch(`${API_URL}?id=eq.${id}`, {
     method: 'DELETE',
     headers: HEADERS
-  })
+})
     .then(res => {
-      if (!res.ok) throw new Error('Error al eliminar cliente');
-      return res.text();
+    if (!res.ok) throw new Error('Error al eliminar cliente');
+    return res.text();
     })
     .catch(error => {
-      console.error("Error al eliminar cliente:", error);
-      throw error;
+    console.error("Error al eliminar cliente:", error);
+    throw error;
     });
 };
 
 const clientes = (id) => {
-  return fetch(`${API_URL}?id=eq.${id}`, {
+return fetch(`${API_URL}?id=eq.${id}`, {
     headers: HEADERS
-  })
+})
     .then(res => {
       if (!res.ok) throw new Error('Error al obtener cliente');
       return res.json();
@@ -320,16 +320,16 @@ const actualizarCliente = (nombre, email, id) => {
       return res.json();
     })
     .catch(error => {
-      console.error("Error al actualizar cliente:", error);
-      throw error;
+    console.error("Error al actualizar cliente:", error);
+    throw error;
     });
 };
 
 export const clientService = {
-  listaclientes,
-  crearCliente,
-  eliminarCliente,
-  clientes,
-  actualizarCliente
+listaclientes,
+crearCliente,
+eliminarCliente,
+clientes,
+actualizarCliente
 };
 
